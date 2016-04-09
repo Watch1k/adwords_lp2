@@ -1,0 +1,763 @@
+// fonts
+$default-fonts: Arial, sans-serif
++font('Arial MT', 'arialmt-webfont')
++font('Arial MT Bold', 'arial-boldmt-webfont')
++font('Roboto Condensed Regular', 'robotocondensed-regular-webfont')
++font('Roboto Condensed Bold', 'robotocondensed-bold-webfont')
+$arial: 'Arial MT', $default-fonts
+$arial-b: 'Arial MT Bold', $default-fonts
+$roboto: 'Roboto Condensed Regular', $default-fonts
+$roboto-b: 'Roboto Condensed Bold', $default-fonts
+
+// colors
+$black: #333
+$grey: #9B9B9B
+$red: #E82626
+
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
+a:hover, a:focus
+	text-decoration: none
+a
+	color: inherit
+	text-decoration: none
+svg
+	width: 100%
+	height: 100%
+.is-hidden
+	display: none
+.row
+	+pie-clearfix
+html
+	font-size: 16px
+body
+	overflow: auto
+	min-width: 1000px
+	font-family: $arial
+	font-size: rem(13)
+	color: $black
+	line-height: 1.42857
+.wrapper
+	overflow: hidden
+	margin: 0 auto
+	min-height: 100%
+	padding-bottom: 52px
+.wrap
+	position: relative
+	margin: 0 auto
+	padding-left: 20px
+	padding-right: 20px
+	max-width: 1286px
+	min-width: 960px
+	transition: all 0.3s
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer
+	position: relative
+	margin-top: -52px
+	padding-top: 20px
+	height: 52px
+	font-size: rem(11)
+	line-height: 12px
+	text-align: center
+/* ==========================================================================
+   Main
+   ========================================================================== */
+.logo
+	position: absolute
+	left: 20px
+	top: 30px
+	z-index: 1
+.onepage
+	margin: 0 auto
+	width: 1366px
+	background: #fff url('../img/sky_bg_with_girl.jpg') 0 -20px no-repeat
+#tabsHead
+	height: 444px
+	ul
+		height: 100%
+		font-family: $roboto-b
+		font-size: rem(20)
+		line-height: 24px
+		li
+			position: absolute
+			right: 0
+			bottom: 0
+			padding: 15px 15px 5px 30px
+			outline: none
+			height: 70px
+			width: 64%
+			background-color: #fff
+			z-index: 1
+			box-sizing: border-box
+			a
+				display: block
+				height: 100%
+			+ li
+				a
+					&:hover
+						color: $red
+						.icon-help
+							@extend .icon-help-hover
+						span
+							color: $red
+						p
+							color: $black
+			+ li
+				bottom: 70px
+				width: 52.5%
+				+ li
+					bottom: 140px
+					width: 40.5%
+					font-size: rem(32)
+			span
+				color: $grey
+			p
+				margin-top: 5px
+				font-family: $arial
+				font-size: rem(13)
+				line-height: 18px
+			.icon
+				display: inline-block
+				margin-left: 7px
+		~ div
+			display: none
+			position: absolute
+			top: 40px
+			right: 30px
+			width: 36%
+			p
+				font-family: $roboto-b
+				font-size: rem(42)
+				line-height: 48px
+				span
+					display: block
+					margin-top: 5px
+					font-family: $arial
+					font-size: rem(18)
+					color: $grey
+					line-height: 24px
+				+ p
+					padding-top: 20px
+					font-family: $arial
+					font-size: rem(18)
+					color: $grey
+					line-height: 24px
+			span
+				+ p
+					padding-top: 20px
+					font-family: $arial
+					font-size: rem(18)
+					color: $grey
+					line-height: 24px
+.verify
+	position: relative
+	z-index: 1
+	float: right
+	margin-top: -10px
+	margin-right: 60px
+	opacity: 0.6
+	img
+		float: right
+	.row
+		+ .row
+			margin-top: 50px
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
+	position: absolute
+	left: -9999px
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label
+	position: relative
+	padding-left: 25px
+	cursor: pointer
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before
+	content: ''
+	position: absolute
+	left: 0
+	top: 1px
+	width: 14px
+	height: 14px
+	border: 1px solid #2581e1
+	background: #fff
+	border-radius: 3px
+	transition: all 0.2s
+[type="checkbox"]:checked + label:before
+	background-color: #3b99fc
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after
+	content: '\2714'
+	position: absolute
+	top: 4px
+	left: 4px
+	font-size: 11px
+	line-height: 1
+	color: #fff
+	text-shadow: 0 2px #2581e1
+	transition: all .5s
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after
+	opacity: 0
+	transform: scale(0)
+[type="checkbox"]:checked + label:after
+	opacity: 1
+	transform: scale(1)
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before
+	box-shadow: none
+	border-color: #bbb
+	background-color: #ddd
+[type="checkbox"]:disabled:checked + label:after
+	color: #999
+[type="checkbox"]:disabled + label
+	color: #aaa
+/* hover style just for information */
+label:hover:before
+	background-color: #2581e1 !important
+.contact-text
+	float: left
+	padding-top: 25px
+	padding-right: 30px
+	width: 38%
+	p
+		font-family: $roboto-b
+		font-size: rem(35)
+		line-height: 48px
+		text-transform: uppercase
+		+ p
+			font-family: $arial
+			font-size: rem(18)
+			color: $grey
+			line-height: 24px
+			text-transform: none
+#contact, #contact2
+	+pie-clearfix
+#contact2
+	margin: 0 auto
+	padding: 20px 80px 55px
+	width: 462px
+	background-color: #fff
+	border-radius: 3px
+	.contact-title
+		margin-top: 0
+		margin-bottom: 20px
+		font-family: $roboto-b
+		font-size: rem(20)
+		line-height: 24px
+		text-align: center
+#contact .check-label, #contact2 .check-label
+	color: #888
+.contact-form, .contact-form2
+	float: left
+	position: relative
+	z-index: 2
+	width: 302px
+	top: -19px
+.contact-form2
+	float: none
+	top: 0
+	margin: 0 auto
+.contact-form input[type="text"], .contact-form2 input[type="text"]
+	width: 100%
+	padding-left: 15px
+	padding-right: 15px
+	background-color: #f9f9f9
+	border: 1px solid #d3d3d3
+	border-radius: 2px
+	font-size: 14px
+	height: 40px
+	line-height: 40px
+	color: #888
+.form-line
+	margin-bottom: 10px
+.check-line
+	margin-top: 5px
+	margin-bottom: 10px
+	text-align: center
+	a:hover
+		text-decoration: underline
+.check-line input
+	display: -moz-inline-stack
+	display: inline-block
+	vertical-align: middle
+	zoom: 1
+	*display: inline
+.check-label
+	font-size: 11px
+	line-height: 20px
+	color: #888
+	display: -moz-inline-stack
+	display: inline-block
+	vertical-align: middle
+	zoom: 1
+	*display: inline
+input.red-btn
+	padding-top: 4px
+	color: #fff
+	text-align: center
+	display: block
+	text-transform: uppercase
+	font-family: $arial-b
+	font-size: 15px
+	letter-spacing: 0.05em
+	border-radius: 2px
+	line-height: 22px
+	transition: 0.2s all ease-out
+	width: 100%
+	height: 40px
+	background: #c20509 linear-gradient(to top, #C41919, #E82626)
+input.red-btn:hover
+	background: linear-gradient(to top, lighten(#C41919,7), lighten(#E82626,7))
+/* tabsMain
+   ========================================================================== */
+#tabsMain
+	margin-top: 40px
+	+pie-clearfix
+	> ul
+		margin: 0 auto
+		padding: 5px
+		width: calc(100% - 40px)
+		max-width: 1246px
+		height: 60px
+		border-radius: 100px
+		border: 2px solid #eee
+		li
+			display: inline-block
+			margin-right: -4px
+			width: 20%
+			height: 100%
+			font-family: $roboto-b
+			font-size: rem(20)
+			line-height: 45px
+			text-align: center
+			letter-spacing: 0.03em
+			border-radius: 100px
+			&.ui-tabs-active
+				color: #fff
+				background-color: #2A387A
+			a
+				display: block
+				height: 100%
+.case
+	font-family: $arial
+	font-size: rem(15)
+	color: $grey
+	line-height: 20px
+	&__el
+		overflow: hidden
+		margin: 0 auto
+		width: 960px
+		padding: 60px 0 80px
+		background-color: #fff
+		+pie-clearfix
+		& + &
+			border-top: 2px solid #eee
+	&__in
+		padding: 0 55px
+		+pie-clearfix
+	&__img
+		float: left
+		overflow: hidden
+		width: 200px
+		height: 200px
+		border-radius: 100%
+		img
+			vertical-align: bottom
+			width: 100%
+			height: auto
+	&__text
+		margin-left: 250px
+	&__title
+		margin-bottom: 5px
+		font-family: $roboto-b
+		font-size: rem(16)
+		color: #2A387A
+		line-height: 19px
+		text-transform: uppercase
+	h3
+		font-family: $roboto-b
+		font-size: rem(42)
+		color: #333
+		line-height: 48px
+	p
+		margin-top: 20px
+		&.case__title
+			margin-top: 0
+	&__bold
+		font-family: $arial-b
+	&__numbers
+		margin-top: 60px
+		+pie-clearfix
+		li
+			float: left
+			width: 16.6%
+		p
+			margin-top: 20px
+			font-family: $roboto
+			font-size: rem(18)
+			color: #444
+			line-height: 21px
+			+ p
+				margin-top: 5px
+				font-family: $roboto-b
+				color: #111
+		.icon
+			height: 20px
+			+vertical
+			i
+				display: inline-block
+				vertical-align: bottom
+	&__graph
+		margin-top: 50px
+		+pie-clearfix
+		img
+			float: left
+			width: 460px
+			+ img
+				margin-left: 40px
+/* Section Try
+   ========================================================================== */
+.section-try
+	display: none
+	margin-bottom: -52px
+	padding: 60px 0 130px
+	color: #333
+	text-align: center
+	background: url('../img/sky_bg.jpg') 0 0 no-repeat
+	background-size: cover
+	p.section-try__title
+		margin: 0
+		font-family: $roboto-b
+		font-size: rem(42)
+		line-height: 48px
+	&__list
+		margin: 30px auto 40px
+		font-family: $roboto
+		font-size: rem(16)
+		li
+			display: inline-block
+			+ li
+				margin-left: 40px
+			span
+				position: relative
+				top: -1px
+				display: inline-block
+				width: 16px
+				height: 16px
+				font-size: rem(11)
+				color: #fff
+				line-height: 16px
+				border-radius: 100%
+				background-color: #333
+/* FAQ
+   ========================================================================== */
+.faq
+	margin: 0 auto
+	padding: 80px 0
+	width: 960px
+	font-size: rem(15)
+	line-height: 20px
+	li
+		+ li
+			margin-top: 50px
+	&__question
+		margin-bottom: 10px
+		font-family: $roboto-b
+		font-size: rem(26)
+		color: #333
+		line-height: 30px
+/* 
+   Partners
+   ========================================================================== */
+.partners
+	margin: 0 auto
+	padding-top: 50px
+	padding-bottom: 50px
+	width: 926px
+	&__list
+		+pie-clearfix
+		li
+			width: 25%
+			height: 130px
+			float: left
+			padding-left: 10px
+			padding-right: 10px
+			vertical-align: middle
+			text-align: center
+			box-sizing: border-box
+			a
+				display: block
+				height: 100%
+				&:before
+					content: ''
+					display: inline-block
+					height: 100%
+					vertical-align: middle
+			img
+				max-width: 100%
+				vertical-align: middle
+/* 
+   Testimonials
+   ========================================================================== */
+.testimonials
+	margin: 0 auto
+	padding-top: 50px
+	padding-bottom: 115px
+	width: 960px
+	font-size: rem(15)
+	color: $grey
+	line-height: 25px
+	&__list
+		+pie-clearfix
+		li
+			padding-top: 30px
+			padding-bottom: 50px
+			background-color: #fff
+			+pie-clearfix
+			+ li
+				border-top: 2px solid #eee
+	&__left
+		float: left
+		width: 320px
+	&__logo
+		display: block
+		img
+			display: block
+		span
+			display: block
+			margin-top: 20px
+			font-size: rem(15)
+			line-height: 17px
+		&:hover
+			span
+				text-decoration: underline
+	&__right
+		float: left
+		width: 640px
+		p
+			margin-top: 10px
+	&__right &__title
+		margin-top: 0
+		font-family: $roboto-b
+		font-size: rem(20)
+		color: $black
+		line-height: 25px
+/* 
+   Numbers
+   ========================================================================== */
+.numbers
+	margin: 0 auto
+	padding-top: 60px
+	width: 960px
+	font-size: rem(15)
+	color: $grey
+	line-height: 20px
+	+pie-clearfix
+	&__desc
+		font-size: rem(13)
+		line-height: 15px
+.count
+	margin-top: 40px
+	&__top
+		background-color: #fff
+		.icon
+			float: left
+			margin-right: 20px
+		&-el
+			display: inline-block
+			vertical-align: middle
+			+pie-clearfix
+			& + &
+				margin-left: 80px
+		&-text
+			overflow: hidden
+			float: left
+		&-title
+			font-family: $roboto-b
+			font-size: rem(32)
+			color: $black
+			line-height: 38px
+	&__bot
+		margin-top: 60px
+		background-color: #fff
+		+pie-clearfix
+	&__left
+		float: left
+		margin-right: 100px
+		+pie-clearfix
+		&-el
+			+pie-clearfix
+			& + &
+				margin-top: 40px
+			.icon
+				float: left
+				margin-right: 12px
+		&-text
+			float: left
+			overflow: hidden
+		&-title
+			font-family: $roboto-b
+			font-size: rem(20)
+			color: $black
+			line-height: 22px
+	&__right
+		float: left
+		+pie-clearfix
+		&-el
+			float: left
+			+pie-clearfix
+			& + &
+				margin-left: 80px
+				.numbers__count-right-title
+					margin-left: 40px
+		&-title
+			font-family: $roboto-b
+			font-size: rem(20)
+			color: $black
+			line-height: 24px
+			.icon
+				display: inline-block
+				margin-right: 10px
+				vertical-align: bottom
+		&-img
+			display: block
+			margin-top: 15px
+.region
+	overflow: hidden
+	margin-top: 60px
+	background-color: #fff
+	+pie-clearfix
+	&__item
+		+pie-clearfix
+		.icon
+			position: relative
+			top: 5px
+			float: left
+			margin-right: 20px
+		&-text
+			float: left
+		&-title
+			font-family: $roboto-b
+			font-size: rem(32)
+			color: $black
+			line-height: 38px
+	&__stats
+		margin-top: 40px
+		height: 280px
+		background: url('../img/content/graph_map.png') right top no-repeat
+		background-size: auto 100%
+		+pie-clearfix
+		.row
+			+ .row
+				margin-top: 20px
+	&__el
+		float: left
+		& + &
+			margin-left: 60px
+		&-title
+			margin-bottom: 6px
+			font-family: $roboto-b
+			font-size: rem(20)
+			color: $black
+			line-height: 24px
+		&-text
+			span
+				display: inline-block
+				min-width: 80px
+.users
+	visibility: hidden
+	margin-top: 40px
+	background-color: #fff
+	+pie-clearfix
+	&__img
+		+pie-clearfix
+		.icon-wrap
+			display: inline-block
+			margin-right: -4px
+			width: 29%
+			text-align: center
+			vertical-align: bottom
+			+ .icon-wrap
+				width: 8%
+				+ .icon-wrap
+					width: 63%
+		.icon
+			display: inline-block
+		.icon-tablet
+			position: relative
+			left: -3px
+	&__stats
+		position: relative
+		padding-bottom: 80px
+		background-color: #fff
+		+pie-clearfix
+	&__el
+		float: left
+		width: 29%
+		text-align: center
+		+pie-clearfix
+		.users__el-bar
+			position: relative
+			left: -2px
+			width: 0
+			height: 10px
+			background-color: $red
+			transition: 2.5s
+			&.animated
+				width: 100%
+				transition: 2.5s
+		+ .users__el
+			width: 8%
+			.users__el-bar
+				left: auto
+				background-color: #bbb
+			+ .users__el
+				width: 63%
+				.users__el-bar
+					right: -2px
+					background-color: $red
+		&-bar
+			margin-top: 20px
+			margin-bottom: 10px
+		&-title
+			font-family: $roboto-b
+			font-size: rem(20)
+			color: $black
+			line-height: 20px
+.comscore-logo
+	display: inline-block
+	margin-left: 5px
+	width: 108px
+	height: 18px
+	vertical-align: middle
+	background: url('../img/comscore_logo.png') 0 0 no-repeat
+/* ==========================================================================
+   Other Styles
+   ========================================================================== */
+#liveChat
+	position: fixed
+	z-index: 99
+	right: 0
+	bottom: 100px
+	width: 63px
+	height: 101px
+	background: url('../img/content/live_chat.png') 0 0 no-repeat
+.js-inview
+	visibility: hidden
+	&.animated
+		visibility: visible
+.delay0_3
+	animation-delay: 0.3s
+.delay0_6
+	animation-delay: 0.6s
+.delay0_9
+	animation-delay: 0.9s
+.typed-cursor
+	display: none

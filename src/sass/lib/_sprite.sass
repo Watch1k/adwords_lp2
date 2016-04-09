@@ -1,0 +1,161 @@
+$icons: (0:0)
+$icons: map-merge($icons,(age: (X: -171px, Y:-144px, W: 40px, H: 40px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(click: (X: -255px, Y:-175px, W: 19px, H: 19px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(conversion: (X: -280px, Y:-127px, W: 13px, H: 16px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(cpa: (X: -255px, Y:-198px, W: 18px, H: 19px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(desktop: (X: 0px, Y:0px, W: 251px, H: 140px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(duration: (X: -255px, Y:-151px, W: 19px, H: 20px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(help-hover: (X: -278px, Y:-175px, W: 16px, H: 16px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(help: (X: -278px, Y:-151px, W: 16px, H: 16px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(income: (X: -255px, Y:0px, W: 39px, H: 39px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(installs: (X: -255px, Y:-127px, W: 21px, H: 20px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(men: (X: 0px, Y:-251px, W: 40px, H: 38px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(region: (X: -255px, Y:-86px, W: 27px, H: 37px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(smartphone: (X: -86px, Y:-144px, W: 34px, H: 63px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(spent: (X: -255px, Y:-221px, W: 10px, H: 20px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(tablet: (X: 0px, Y:-144px, W: 82px, H: 103px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(visitors: (X: -124px, Y:-144px, W: 43px, H: 40px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(women: (X: -255px, Y:-43px, W: 37px, H: 39px, TW: 294px, TH: 289px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2
+@mixin sprite-position-retina($iconName)
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)
+@mixin spr($i)
+	+sprite-position-retina($i)
+
+.icon-age
+	width: 40px
+	height: 40px
+	background-image: url('../img/icons.png')
+	background-position: -171px -144px
+	background-size: 294px 289px
+.icon-click
+	width: 19px
+	height: 19px
+	background-image: url('../img/icons.png')
+	background-position: -255px -175px
+	background-size: 294px 289px
+.icon-conversion
+	width: 13px
+	height: 16px
+	background-image: url('../img/icons.png')
+	background-position: -280px -127px
+	background-size: 294px 289px
+.icon-cpa
+	width: 18px
+	height: 19px
+	background-image: url('../img/icons.png')
+	background-position: -255px -198px
+	background-size: 294px 289px
+.icon-desktop
+	width: 251px
+	height: 140px
+	background-image: url('../img/icons.png')
+	background-position: 0px 0px
+	background-size: 294px 289px
+.icon-duration
+	width: 19px
+	height: 20px
+	background-image: url('../img/icons.png')
+	background-position: -255px -151px
+	background-size: 294px 289px
+.icon-help-hover
+	width: 16px
+	height: 16px
+	background-image: url('../img/icons.png')
+	background-position: -278px -175px
+	background-size: 294px 289px
+.icon-help
+	width: 16px
+	height: 16px
+	background-image: url('../img/icons.png')
+	background-position: -278px -151px
+	background-size: 294px 289px
+.icon-income
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -255px 0px
+	background-size: 294px 289px
+.icon-installs
+	width: 21px
+	height: 20px
+	background-image: url('../img/icons.png')
+	background-position: -255px -127px
+	background-size: 294px 289px
+.icon-men
+	width: 40px
+	height: 38px
+	background-image: url('../img/icons.png')
+	background-position: 0px -251px
+	background-size: 294px 289px
+.icon-region
+	width: 27px
+	height: 37px
+	background-image: url('../img/icons.png')
+	background-position: -255px -86px
+	background-size: 294px 289px
+.icon-smartphone
+	width: 34px
+	height: 63px
+	background-image: url('../img/icons.png')
+	background-position: -86px -144px
+	background-size: 294px 289px
+.icon-spent
+	width: 10px
+	height: 20px
+	background-image: url('../img/icons.png')
+	background-position: -255px -221px
+	background-size: 294px 289px
+.icon-tablet
+	width: 82px
+	height: 103px
+	background-image: url('../img/icons.png')
+	background-position: 0px -144px
+	background-size: 294px 289px
+.icon-visitors
+	width: 43px
+	height: 40px
+	background-image: url('../img/icons.png')
+	background-position: -124px -144px
+	background-size: 294px 289px
+.icon-women
+	width: 37px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -255px -43px
+	background-size: 294px 289px
