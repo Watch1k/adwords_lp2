@@ -364,9 +364,9 @@ body {
   margin: 0 auto;
   width: 1366px;
   background: #fff url("../img/sky_bg_with_man.jpg") 0 0 no-repeat;
-  -moz-background-size: 95% auto;
-  -o-background-size: 95% auto;
-  background-size: 95% auto;
+  -moz-background-size: 93% auto;
+  -o-background-size: 93% auto;
+  background-size: 93% auto;
 }
 
 #tabsHead {
